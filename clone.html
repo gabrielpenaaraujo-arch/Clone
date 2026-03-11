@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CineFlex | Entretenimiento Ilimitado</title>
+    <link rel="stylesheet" href="clone.css">
+</head>
+<body>
+
+    <nav class="nav" id="navbar">
+        <div class="nav__left">
+            <h1 class="logo">CINE<span>FLEX</span></h1>
+            <div class="nav__links">
+                <a href="#" class="active">Inicio</a>
+                <a href="#">Series</a>
+                <a href="#">Películas</a>
+                <a href="#">Mi Lista</a>
+            </div>
+        </div>
+        <div class="nav__right">
+            <div class="search-box">
+                <input type="text" placeholder="Títulos, géneros..." class="search-input">
+            </div>
+            <img class="nav__avatar" src="https://upload.wikimedia.org/wikipedia/commons/0/0b/Netflix-avatar.png" alt="Usuario">
+        </div>
+    </nav>
+
+    <header class="banner">
+        <div class="banner__contents">
+            <h1 class="banner__title">Minecraft: La Película</h1>
+            <div class="banner__buttons">
+                <button class="banner__button play">▶ Reproducir</button>
+                <button class="banner__button info">ⓘ Más información</button>
+            </div>
+            <p class="banner__description">
+                Un mundo de bloques cobra vida. Acompaña a Gabo en una aventura épica para salvar el Overworld de una invasión de Creepers eléctricos.
+            </p>
+        </div>
+        <div class="banner--fadeBottom"></div>
+    </header>
+
+    <main class="container">
+        
+      <section class="row">
+    <h2>El Top 10 de hoy en CineFlex</h2>
+    <div class="row__wrapper">
+        <div class="handle handlePrev" onclick="sideScroll('filaTop', 'left')"><span class="arrow">&#8249;</span></div>
+        <div class="row__posters" id="filaTop">
+            <div class="ranking-item"><span class="rank-num">1</span><img src="imagen/jok.jpg" class="row__posterLarge"></div>
+            <div class="ranking-item"><span class="rank-num">2</span><img src="imagen/mine.jpg" class="row__posterLarge"></div>
+            <div class="ranking-item"><span class="rank-num">3</span><img src="imagen/spi.jpg" class="row__posterLarge"></div>
+            <div class="ranking-item"><span class="rank-num">4</span><img src="imagen/rag.jpg" class="row__posterLarge"></div>
+            <div class="ranking-item"><span class="rank-num">5</span><img src="imagen/f1.jpg" class="row__posterLarge"></div>
+            <div class="ranking-item"><span class="rank-num">6</span><img src="imagen/thor.jpg" class="row__posterLarge"></div>
+            <div class="ranking-item"><span class="rank-num">7</span><img src="imagen/run.jpg" class="row__posterLarge"></div>
+            <div class="ranking-item"><span class="rank-num">8</span><img src="imagen/pel.jpg" class="row__posterLarge"></div>
+            <div class="ranking-item"><span class="rank-num">9</span><img src="imagen/tic.jpg" class="row__posterLarge"></div>
+            <div class="ranking-item"><span class="rank-num">10</span><img src="imagen/john.jpg" class="row__posterLarge"></div>
+        </div>
+        <div class="handle handleNext" onclick="sideScroll('filaTop', 'right')"><span class="arrow">&#8250;</span></div>
+    </div>
+</section>
+
+        <section class="row">
+            <h2>Héroes y Leyendas</h2>
+            <div class="row__wrapper">
+                <div class="handle handlePrev" onclick="sideScroll('filaHeroes', 'left')"><span class="arrow">&#8249;</span></div>
+                <div class="row__posters" id="filaHeroes">
+                    <img src="imagen/rag.jpg" class="row__posterLarge" alt="Thor Ragnarok">
+                    <img src="imagen/spi.jpg" class="row__posterLarge" alt="Spiderman">
+                    <img src="imagen/thor.jpg" class="row__posterLarge" alt="Thor Amor y Trueno">
+                    <img src="imagen/pel.jpg" class="row__posterLarge" alt="Profesión Peligro">
+                    <img src="imagen/run.jpg" class="row__posterLarge" alt="Blade Runner">
+                </div>
+                <div class="handle handleNext" onclick="sideScroll('filaHeroes', 'right')"><span class="arrow">&#8250;</span></div>
+            </div>
+        </section>
+
+        <section class="row">
+            <h2>Originales de CineFlex</h2>
+            <div class="row__wrapper">
+                <div class="handle handlePrev" onclick="sideScroll('filaOriginals', 'left')"><span class="arrow">&#8249;</span></div>
+                <div class="row__posters" id="filaOriginals">
+                    <img src="imagen/hell.jpg" class="row__posterLarge" alt="Hell's Paradise">
+                    <img src="imagen/balle.jpg" class="row__posterLarge" alt="Ballerina">
+                    <img src="imagen/depre.jpg" class="row__posterLarge" alt="Depredador">
+                    <img src="imagen/john.jpg" class="row__posterLarge" alt="John Wick">
+                    <img src="imagen/mercy.jpg" class="row__posterLarge" alt="Mercy">
+                    <img src="imagen/jurasic.jpg" class="row__posterLarge" alt="Jurassic">
+                </div>
+                <div class="handle handleNext" onclick="sideScroll('filaOriginals', 'right')"><span class="arrow">&#8250;</span></div>
+            </div>
+        </section>
+
+    </main>
+
+    <footer class="footer">
+        <p>© 2026 CineFlex - Creado por Gabo</p>
+    </footer>
+
+    <script>
+        function sideScroll(id, direction) {
+            var container = document.getElementById(id);
+            var step = 450;
+            if(direction == 'right') {
+                container.scrollLeft += step;
+            } else {
+                container.scrollLeft -= step;
+            }
+        }
+
+        window.addEventListener("scroll", function() {
+            var nav = document.getElementById("navbar");
+            nav.classList.toggle("nav__black", window.scrollY > 100);
+        });
+    </script>
+</body>
+</html>
